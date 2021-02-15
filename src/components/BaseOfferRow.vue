@@ -31,8 +31,8 @@
         class="offer-body-row">
         <div class="links-and-promo item"> {{item.promo}} </div>
         <div class="traffic-type item"> {{item.type}} </div>
-        <div class="clicks item">{{ item.clicks }}</div>
-        <div class="cr item">{{ item.cr }}%</div>
+        <div class="clicks item"></div>
+        <div class="cr item"></div>
       </div>
     </div>
   </div>
