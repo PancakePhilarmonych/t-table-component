@@ -1,0 +1,45 @@
+table {
+  border-spacing: 0;
+  border-collapse:separate;
+
+  td {
+    padding: 0 10px;
+    text-align: start;
+    max-width: 200px;
+  }
+
+  th {
+    padding: 0 10px;
+    text-align: start;
+    max-width: 200px;
+  }
+}
+
+table {
+  width: 100%;
+
+  thead {
+    background-color: $main;
+    color: white;
+
+    tr {
+      height: 32px;
+      border-radius: 10px;
+
+      td {
+        cursor: pointer;
+        font-size: 10px
+      }
+    }
+
+  };
+
+  tbody {
+    background-color: white;
+
+    th {
+      border-collapse: collapse;
+      font-size: 10px
+    }
+  };
+}
