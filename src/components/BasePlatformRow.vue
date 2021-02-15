@@ -1,23 +1,23 @@
 <template>
   <div class="row">
-    <div class="name"
+    <div class="name item"
          @click="onClick">
-      <div>{{ platform.name }}</div>
+      {{ platform.name }}
     </div>
-    <div class="body-wrapper">
-      <div v-if="rolled" class="body-row">
-          <div class="item">
+    <div class="platform-wrapper">
+      <div v-if="rolled" class="platform-row">
+          <div class="offers clicked item">
             Офферы: {{ getPlatformOffersTotalCount }}
           </div>
 
-          <div class="links-and-promo">
-            <div class="item"> Ссылки :{{ platformOfferItemsHasValue('links') }} </div>
-            <div class="item"> Промо :{{ platformOfferItemsHasValue('promo') }} </div>
+          <div class="links-and-promo item">
+            <div class="item"> Ссылки: {{ platformOfferItemsHasValue('links') }} </div>
+            <div class="item"> Промо: {{ platformOfferItemsHasValue('promo') }} </div>
           </div>
 
-          <div class="item"></div>
-          <div class="item">{{ clicks }}</div>
-          <div class="item">{{ cr }}%</div>
+          <div class="traffic-type item"></div>
+          <div class="clicks item">{{ clicks }}</div>
+          <div class="cr item">{{ cr }}%</div>
       </div>
 
       <base-offer-row
@@ -61,7 +61,6 @@ export default {
     },
 
     togglePlatform(id) {
-      console.log(id)
       this.$refs[`offer-${id}`][0].toggle()
     },
 
@@ -79,7 +78,7 @@ export default {
       return this.platform.offers
         .map(offer => offer.items
         .map(item =>  item.clicks))
-        .flat(3)
+        .flat(2)
         .reduce((prev,current) => prev + current)
     },
 
@@ -87,7 +86,7 @@ export default {
       return this.platform.offers
         .map(offer => offer.items
         .map(item =>  item.cr))
-        .flat(3)
+        .flat(2)
         .reduce((prev,current) => prev + current)
     },
   }

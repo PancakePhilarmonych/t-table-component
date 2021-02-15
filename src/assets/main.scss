@@ -1,16 +1,11 @@
 * {
   box-sizing: border-box;
-
-  &:before,
-  &:after {
-    box-sizing: border-box;
-  }
 }
 
 html {
   width: 100%;
   height: 100%;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 21px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-font-smoothing: antialiased;
@@ -40,52 +35,70 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+
+  display: flex;
+  justify-content: center;
 }
 
 .table {
+  width: auto;
   user-select: none;
   display: flex;
   flex-direction: column;
 
   .thead {
-    height: 75px;
-    background-color: antiquewhite;
-    width: 100%;
-
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+
+    width: 100%;
+    padding: 10px;
+    height: 75px;
+
+    background-color: rgb(69, 118, 243);
+    color: white;
+    font-weight: bold;
+  }
+
+  .item {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .name-column {
-    width: 15%;
+    width: 250px;
   }
 
   .offers {
-    cursor: pointer;
-    width: 20%;
+    width: 200px;
+    padding: 4px;
+
+    &.clicked {
+      cursor: pointer;
+    }
   }
 
   .links-and-promo {
     display: flex;
+    width: 200px;
     flex-direction: column;
-    width: 35%;
+
+    & > * {
+      margin: 4px;
+    }
   }
 
-  .traffic {
-    width: 10%;
+  .traffic-type {
+    width: 150px;
   }
 
   .clicks {
-    width: 10%;
+    width: 100px;
   }
 
   .cr {
-    width: 10%;
-  }
-
-  .item {
-    width: 10vw;
+    width: 100px;
   }
 
   .row {
@@ -93,53 +106,49 @@ body {
     display: flex;
     flex-direction: row;
 
+    border-bottom: 1px solid #e4e5e8;
+    background-color: #f1f2f6;
 
-    background-color: #1781b3;
-    color: white;
+    color: rgb(44, 44, 44);
 
     .name {
-      width: 15%;
-      display: flex;
-      flex-direction: row;
-
+      width: 250px;
     }
   }
 
   .name {
-    width: 10vw;
+    padding: 8px;
     cursor: pointer;
   }
 
-  .body-wrapper {
-    width: 85%;
+  .platform-wrapper {
     display: flex;
     flex-direction: column;
 
-    & > .body-row:nth-child(odd) {
-      background-color: #1d86b6;
-    }
-
-    .body-row {
+    .platform-row {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
+      margin: 8px;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #e4e5e8;
+      }
 
       .offer-body {
-        width: 100%;
         display: flex;
         flex-direction: column;
+        margin-bottom: 10px;
 
         .offer-body-row {
+          padding: 4px 0;
           display: flex;
           flex-direction: row;
           justify-content: space-evenly;
-          padding: 8px
-        }
 
-        .offer-row {
-          width: 100%;
-          display: flex;
-          flex-direction: row;
+          & > * {
+            height: 35px;
+          }
         }
       }
     }
